@@ -76,9 +76,9 @@ if y==0:
             print(' '*(i-m)+'*'*(2+(num-i-1)*2)+' '*(i-m))
 8、python对数列从小到大排序
 list = [6,5,3,1,4,2,2,4,6,2,3]
-c = len(list)
-for i in range(c-1):
-    for i in range(c-1):
+l = len(list)
+for i in range(l-1):
+    for i in range(l-1):
         if list[i] > list[i+1]:
             num = list[i+1]
             list[i+1] = list[i]
