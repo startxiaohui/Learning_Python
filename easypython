@@ -24,7 +24,7 @@ for num in range(2,100000):
         if num%i == 0:
             flag = False
             break
-    if flag == True:
+    if flag:
         result.append(num)
 print(result)
 4、python输出100以内的斐波那契数列
