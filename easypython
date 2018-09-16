@@ -69,7 +69,22 @@ if y==0:
             print(' '*(m-i)+'*'*(2*i)+' '*(m-i))
         else:
             print(' '*(i-m)+'*'*(2+(num-i-1)*2)+' '*(i-m))
-8、python对数列从小到大排序
+8、python输出闪电图
+while True:
+    num = int(input('Input a jishu:'))
+    if num%2 == 0:
+        continue
+    else:
+        break
+mid = -(num//2)
+for i in range(mid,num+mid):
+    prespase = -i if i < 0 else -mid
+    j=abs(i)
+    if i == 0:
+        print('*'*num)
+    else:
+        print(' '*prespase+'*'*(1+(-mid-j)))
+9、python对数列从小到大排序
 list = [6,5,3,1,4,2,2,4,6,2,3]
 l = len(list)
 for i in range(l-1):
