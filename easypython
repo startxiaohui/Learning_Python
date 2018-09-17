@@ -14,9 +14,9 @@ else:
     print('%d 是一个素数' % num)
 3、python计算10万以内素数或者质数
 result = [2,3,5,7]
-for i in range(8,100000):
+for i in range(9,100000,2):
     flag=True
-    if i % 2 == 0 or i % 3 == 0 or i % 5 ==0 or i % 7 ==0:
+    if i % 3 == 0 or i % 5 ==0 or i % 7 ==0:
         continue
     for j in range(8,int(i**0.5)+1):
         if i%j == 0:
