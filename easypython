@@ -14,15 +14,23 @@ else:
     print('%d 是一个素数' % num)
 3、python计算10万以内素数或者质数
 result = []
-for num in range(2,100000):
-    flag = True
-    for i in range(2,num):
-        if num%i == 0:
-            flag = False
+t1 = datetime.datetime.now()
+num=[2,3,5,7]
+result += num
+for i in range(2,100000):
+    flag=True
+    if i % 2 == 0 or i % 3 == 0 or i % 5 ==0 or i % 7 ==0:
+        continue
+    for j in range(8,int(i**0.5)+1):
+        if i%j == 0:
+            flag=False
             break
     if flag:
-        result.append(num)
-print(result)
+        result.append(i)
+t2 = datetime.datetime.now()
+num=len(result)
+print(t2-t1)
+print(num)
 4、python输出100以内的斐波那契数列
 fei = [1,1]
 i = 2
