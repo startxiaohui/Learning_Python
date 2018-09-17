@@ -18,7 +18,7 @@ for i in range(9,100000,2):
     flag=True
     if i % 3 == 0 or i % 5 ==0 or i % 7 ==0:
         continue
-    for j in range(8,int(i**0.5)+1):
+    for j in range(9,int(i**0.5)+1,2):
         if i%j == 0:
             flag=False
             break
