@@ -87,17 +87,19 @@ for i in range(mid,num+mid):
     else:
         print(' '*prespase+'*'*(1+(-mid-j)))
 9、python对数列从小到大排序
-list = [6,5,3,1,4,2,2,4,6,2,3]
-l = len(list)
-for i in range(l-1):
-    count = 0
-    for i in range(l-1):
-        if list[i] > list[i+1]:
-            count += 1
-            num = list[i+1]
-            list[i+1] = list[i]
-            list[i] = num
-    if count == 0:
-        break
-print(list)
+lst=[2,1,9,3,5,6,2,1,5,7]
+count = 0
+count_1 = 0
+while True:
+    flag=True
+    for i in range(len(lst)-1-count):
+        if lst[i] > lst[i+1]:
+            count_1 += 1
+            lst[i],lst[i+1] = lst[i+1],lst[i]
+            flag=False
+    count += 1
+    if flag:
+        break    
+print(lst)
+print(count_1)
 
