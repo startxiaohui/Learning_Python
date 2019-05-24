@@ -1,0 +1,39 @@
+import random
+
+def wx_redpacket():
+    while True:
+        input_money = input('输入红包金额：')
+        if not input_money.isdigit():
+            print('必须输入数字！')
+            continue
+        input_num = input('输入红包个数：')
+        if not input_num.isdigit():
+            print('必须输入数字！')
+            continue
+        input_money = float(input_money)
+        input_num = int(input_num)
+        break
+    #假定手续费为5%
+    out_money = round(input_money*0.95,2)
+
+    money_lst = []
+    proportion_sum = 0
+    #先确定红包金额比例
+    for i in range(input_num):
+        proportion = random.randint(1,11)
+        proportion_sum += proportion
+        money_lst.append(proportion)
+    #开始计算各个红包具体金额，最后一个红包金额为总金额减去前面已确定金额的总和，防止出现总金额多或少
+    issued = 0
+    for i in range(input_num):
+        if i < input_num - 1:
+            money_lst[i] = round(out_money*money_lst[i]/proportion_sum,2)
+            issued += money_lst[i]
+        if i == input_num - 1:
+            money_lst[i] = round(out_money - issued,2)
+
+    return money_lst
+
+if __name__ == '__main__':
+    while True:
+        print(wx_redpacket())
